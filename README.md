@@ -1,2 +1,2 @@
 # LAYATest
-熟悉laya引擎的demo
+熟悉laya引擎衍生的demo
