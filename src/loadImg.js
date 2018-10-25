@@ -2,6 +2,7 @@
 (function () {
     var Sprite = Laya.Sprite;
     var Stage = Laya.Stage;//舞台
+    var GlowFilter = Laya.Filter;//滤镜
     var Texture = Laya.Texture;
     var Browser = Laya.Browser;
     var Handler = Laya.Handler;
@@ -45,7 +46,7 @@
         var textureUrl = (flag = !flag) ? imgUrl1 : imgUrl2;
         ape.loadImage(textureUrl);
         // 设置尺寸
-        ape.size(200,200)
+        ape.size(200, 200)
     }
 
     /**
@@ -65,15 +66,25 @@
             switchTexture2()
             // 点击切换
             ape2.on('click', this, switchTexture2);
+            // 
+            filterGlow()
         }
         function switchTexture2() {
             // 清理纹理
             ape2.graphics.clear();
             var nowUrl = (flag2 = !flag2) ? imgUrl3 : imgUrl4;
             var t2 = Laya.loader.getRes(nowUrl);
-            ape2.graphics.drawTexture(t2, 0, 0,200,200);//绘制纹理。 drawTexture(url,x,y,width,height)
+            ape2.graphics.drawTexture(t2, 0, 0, 200, 200);//绘制纹理。 drawTexture(url,x,y,width,height)
             // 设置交互区域
-            ape2.size(200,200);
+            ape2.size(200, 200);
+        }
+        // 设置滤镜,疑问 
+        function filterGlow() {
+            //创建一个发光滤镜
+            // var glowFilter = new Laya.GlowFilter("#ffff00", 10, 0, 0);
+            //设置滤镜集合为发光滤镜
+            // ape2.filters = [glowFilter];
+            // console.log(Laya.BlurFilter)
         }
     }
 })();
