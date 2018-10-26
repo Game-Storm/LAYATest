@@ -1,4 +1,6 @@
 import GameConfig from "./GameConfig";
+import Hello from "./HelloLayabox";
+
 class Main {
 	constructor() {
 		//根据IDE设置初始化引擎		
@@ -33,5 +35,6 @@ class Main {
 		GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
 	}
 }
+
 //激活启动类
 new Main();

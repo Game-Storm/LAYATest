@@ -3,9 +3,9 @@
 
 export default class GameConfig {
     static init() {
-        //注册Script或者Runtime引用
+        //注册Script或者Runtime引用,创建一个映射
         let reg = Laya.ClassUtils.regClass;
-
+        // reg(className,classDef)  class名字 和 路径
     }
 }
 GameConfig.width = 640;
